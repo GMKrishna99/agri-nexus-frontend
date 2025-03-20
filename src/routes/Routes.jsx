@@ -42,6 +42,7 @@ import MarketPricesOfCrops from "../pages/Resources/MarketPricesOfCrops";
 import FarmingTipsBestPractices from "../pages/Resources/FarmingTipsBestPractices";
 import GuidesTutorials from "../pages/Resources/GuidesTutorials";
 import AgricultureNewsTrends from "../pages/Resources/AgricultureNewsTrends";
+import HomePage from "../pages/HomePage";
 
 const AppRoutes = () => {
   return (
@@ -49,6 +50,7 @@ const AppRoutes = () => {
       <Navbar />
       <Routes>
         {/* Marketplace Routes */}
+        <Route path="/" element={<HomePage />} />
         <Route path="/marketplace" element={<ViewAllProducts />} />
         <Route path="/marketplace/seeds-crops" element={<SeedCrops />} />
         <Route path="/marketplace/search" element={<SearchFilters />} />
