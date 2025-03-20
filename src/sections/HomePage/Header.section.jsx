@@ -15,12 +15,12 @@ const HeaderSection = () => {
             {/* Background Image */}
             <img
               src={farmImage}
-              alt={`Carousel Image }`}
+              alt="Carousel Image"
               className="w-full h-full object-cover rounded-lg"
             />
 
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white px-4 rounded-lg">
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-white px-4 rounded-lg z-10">
               <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold">
                 Empowering Farmers with Technology 🌱
               </h2>

@@ -43,111 +43,153 @@ import FarmingTipsBestPractices from "../pages/Resources/FarmingTipsBestPractice
 import GuidesTutorials from "../pages/Resources/GuidesTutorials";
 import AgricultureNewsTrends from "../pages/Resources/AgricultureNewsTrends";
 import HomePage from "../pages/HomePage";
+import Cart from "@/pages/Cart";
+import Checkout from "@/pages/Checkout";
+import Payment from "@/pages/payment";
+import OrderConfirmation from "@/pages/OrderConfirmation";
+import LoginPage from "@/pages/LoginPage";
+import SignUpPage from "@/pages/SignUpPage";
 
 const AppRoutes = () => {
   return (
     <Router>
-      <Navbar />
       <Routes>
-        {/* Marketplace Routes */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/marketplace" element={<ViewAllProducts />} />
-        <Route path="/marketplace/seeds-crops" element={<SeedCrops />} />
-        <Route path="/marketplace/search" element={<SearchFilters />} />
-        <Route
-          path="/marketplace/organic"
-          element={<OrganicSustainableFarming />}
-        />
-        <Route
-          path="/marketplace/fertilizers-pesticides"
-          element={<FertilizersPesticides />}
-        />
-        <Route path="/marketplace/equipment" element={<FarmingEquipment />} />
-        <Route path="/marketplace/vendor-options" element={<VendorOptions />} />
+        {/* Auth Routes */}
+        <Route path="/sign-in" element={<LoginPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
 
-        {/* Government Assistance Routes */}
+        {/* Main Layout Routes */}
         <Route
-          path="/govt-assistance/schemes"
-          element={<LatestSchemesPolicies />}
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/marketplace" element={<ViewAllProducts />} />
+                <Route
+                  path="/marketplace/seeds-crops"
+                  element={<SeedCrops />}
+                />
+                <Route path="/marketplace/search" element={<SearchFilters />} />
+                <Route
+                  path="/marketplace/organic"
+                  element={<OrganicSustainableFarming />}
+                />
+                <Route
+                  path="/marketplace/fertilizers-pesticides"
+                  element={<FertilizersPesticides />}
+                />
+                <Route
+                  path="/marketplace/equipment"
+                  element={<FarmingEquipment />}
+                />
+                <Route
+                  path="/marketplace/vendor-options"
+                  element={<VendorOptions />}
+                />
+                <Route
+                  path="/govt-assistance/schemes"
+                  element={<LatestSchemesPolicies />}
+                />
+                <Route
+                  path="/govt-assistance/eligibility"
+                  element={<CheckEligibility />}
+                />
+                <Route
+                  path="/govt-assistance/apply"
+                  element={<ApplyForSubsidy />}
+                />
+                <Route
+                  path="/govt-assistance/track-status"
+                  element={<TrackApplicationStatus />}
+                />
+                <Route
+                  path="/govt-assistance/loan-programs"
+                  element={<GovernmentLoanPrograms />}
+                />
+                <Route
+                  path="/govt-assistance/events"
+                  element={<UpcomingAgriculturalEventsWebinars />}
+                />
+                <Route
+                  path="/financial-services/loans"
+                  element={<LoanOptionsForFarmers />}
+                />
+                <Route
+                  path="/financial-services/calculator"
+                  element={<EmiLoanCalculator />}
+                />
+                <Route
+                  path="/financial-services/apply-loan"
+                  element={<ApplyForALoan />}
+                />
+                <Route
+                  path="/financial-services/track-loan"
+                  element={<TrackLoanStatus />}
+                />
+                <Route
+                  path="/financial-services/partnerships"
+                  element={<GovernmentPrivateBankPartnerships />}
+                />
+                <Route
+                  path="/financial-services/insurance"
+                  element={<InsuranceRiskManagement />}
+                />
+                <Route
+                  path="/consult-expert/find"
+                  element={<FindAnAgriculturalConsultant />}
+                />
+                <Route
+                  path="/consult-expert/book"
+                  element={<BookAConsultation />}
+                />
+                <Route
+                  path="/consult-expert/video-chat"
+                  element={<VideoChatConsultations />}
+                />
+                <Route
+                  path="/consult-expert/blogs"
+                  element={<ExpertBlogsInsights />}
+                />
+                <Route
+                  path="/consult-expert/case-studies"
+                  element={<SuccessStoriesCaseStudies />}
+                />
+                <Route
+                  path="/consult-expert/options"
+                  element={<ConsultantOptions />}
+                />
+                <Route
+                  path="/resources/weather"
+                  element={<WeatherUpdatesForecasts />}
+                />
+                <Route
+                  path="/resources/market-prices"
+                  element={<MarketPricesOfCrops />}
+                />
+                <Route
+                  path="/resources/farming-tips"
+                  element={<FarmingTipsBestPractices />}
+                />
+                <Route path="/resources/guides" element={<GuidesTutorials />} />
+                <Route
+                  path="/resources/news"
+                  element={<AgricultureNewsTrends />}
+                />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/payment-details" element={<Payment />} />
+                <Route
+                  path="/order-confirmation"
+                  element={<OrderConfirmation />}
+                />
+              </Routes>
+              <Footer />
+            </>
+          }
         />
-        <Route
-          path="/govt-assistance/eligibility"
-          element={<CheckEligibility />}
-        />
-        <Route path="/govt-assistance/apply" element={<ApplyForSubsidy />} />
-        <Route
-          path="/govt-assistance/track-status"
-          element={<TrackApplicationStatus />}
-        />
-        <Route
-          path="/govt-assistance/loan-programs"
-          element={<GovernmentLoanPrograms />}
-        />
-        <Route
-          path="/govt-assistance/events"
-          element={<UpcomingAgriculturalEventsWebinars />}
-        />
-
-        {/* Financial Services Routes */}
-        <Route
-          path="/financial-services/loans"
-          element={<LoanOptionsForFarmers />}
-        />
-        <Route
-          path="/financial-services/calculator"
-          element={<EmiLoanCalculator />}
-        />
-        <Route
-          path="/financial-services/apply-loan"
-          element={<ApplyForALoan />}
-        />
-        <Route
-          path="/financial-services/track-loan"
-          element={<TrackLoanStatus />}
-        />
-        <Route
-          path="/financial-services/partnerships"
-          element={<GovernmentPrivateBankPartnerships />}
-        />
-        <Route
-          path="/financial-services/insurance"
-          element={<InsuranceRiskManagement />}
-        />
-
-        {/* Consult an Expert Routes */}
-        <Route
-          path="/consult-expert/find"
-          element={<FindAnAgriculturalConsultant />}
-        />
-        <Route path="/consult-expert/book" element={<BookAConsultation />} />
-        <Route
-          path="/consult-expert/video-chat"
-          element={<VideoChatConsultations />}
-        />
-        <Route path="/consult-expert/blogs" element={<ExpertBlogsInsights />} />
-        <Route
-          path="/consult-expert/case-studies"
-          element={<SuccessStoriesCaseStudies />}
-        />
-        <Route path="/consult-expert/options" element={<ConsultantOptions />} />
-
-        {/* Resources Routes */}
-        <Route
-          path="/resources/weather"
-          element={<WeatherUpdatesForecasts />}
-        />
-        <Route
-          path="/resources/market-prices"
-          element={<MarketPricesOfCrops />}
-        />
-        <Route
-          path="/resources/farming-tips"
-          element={<FarmingTipsBestPractices />}
-        />
-        <Route path="/resources/guides" element={<GuidesTutorials />} />
-        <Route path="/resources/news" element={<AgricultureNewsTrends />} />
       </Routes>
-      <Footer />
     </Router>
   );
 };
