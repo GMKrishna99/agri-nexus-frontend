@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 
 const KeyFeatures = () => {
   return (
-    <section className="container mx-auto py-12 px-4">
+    <section className="container mx-auto py-8 px-4 sm:py-12 sm:px-8 lg:px-16 xl:px-20 text-center">
       <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
         Why Choose AgriNexus?
       </h2>
@@ -12,7 +12,7 @@ const KeyFeatures = () => {
         {FEATURES.map((feature, idx) => (
           <Card
             key={idx}
-            className="p-6 flex items-center space-x-4 hover:shadow-lg transition-all duration-300"
+            className="p-6 flex items-center space-x-4 hover:shadow-lg transition-all duration-300 cursor-pointer"
           >
             {/* Icon Section */}
             <div className="bg-green-600 p-3 rounded-full flex items-center justify-center">

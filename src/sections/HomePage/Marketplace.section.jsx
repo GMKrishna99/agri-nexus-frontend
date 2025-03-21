@@ -4,7 +4,7 @@ import React from "react";
 
 const MarketPlace = () => {
   return (
-    <section className="bg-white py-12 px-4">
+    <section className="container mx-auto py-8 px-4 sm:py-12 sm:px-8 lg:px-16 xl:px-20 text-center">
       <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
         Explore Marketplace
       </h2>
@@ -12,7 +12,7 @@ const MarketPlace = () => {
         {MARKETPLACE_CATEGORIES.map((category, idx) => (
           <Card
             key={idx}
-            className="p-6 flex items-center justify-center text-center hover:shadow-lg transition-all duration-300"
+            className="p-6 flex items-center justify-center text-center hover:shadow-lg transition-all duration-300 cursor-pointer"
           >
             <h3 className="text-lg sm:text-xl font-bold">{category}</h3>
           </Card>

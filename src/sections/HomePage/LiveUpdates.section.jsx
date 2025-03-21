@@ -4,7 +4,7 @@ import React from "react";
 
 const LiveUpdates = () => {
   return (
-    <section className="bg-gray-200 py-12 px-4">
+    <section className="py-8 px-4 sm:py-12 sm:px-8 lg:px-16 xl:px-20">
       <h2 className="text-3xl font-semibold text-center mb-8">
         Live Updates & News
       </h2>

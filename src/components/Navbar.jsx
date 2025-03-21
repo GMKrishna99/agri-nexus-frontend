@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { NAVBAR_ITEMS } from "../constants/Navbar.constance";
 import { FiMenu, FiX } from "react-icons/fi";
 import { MdArrowDropDown } from "react-icons/md";
-import { HiOutlineShoppingCart, HiUserCircle } from "react-icons/hi";
+import { HiUserCircle } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Logo from "../assets/logo.png";
@@ -31,9 +31,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser) {
-      setUser(storedUser);
-    }
+    if (storedUser) setUser(storedUser);
 
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -63,9 +61,17 @@ const Navbar = () => {
     <nav className="bg-white border-b border-gray-100 w-full z-50">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-0 flex justify-between items-center h-20">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-blue-600">
+        <Link to="/" className="text-2xl font-bold">
           <img src={Logo} alt="Logo" height={30} width={60} />
         </Link>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="lg:hidden text-gray-700 focus:outline-none"
+        >
+          <FiMenu size={28} />
+        </button>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-6" ref={dropdownRef}>
@@ -73,7 +79,7 @@ const Navbar = () => {
             <div key={index} className="relative">
               <button
                 onClick={() => toggleDropdown(index)}
-                className="text-gray-700 hover:text-blue-600 flex items-center cursor-pointer"
+                className="text-gray-700 hover:text-green-600 flex items-center cursor-pointer"
               >
                 {navItem.label}
                 <motion.div
@@ -96,7 +102,7 @@ const Navbar = () => {
                       <Link
                         key={idx}
                         to={item.path}
-                        className="block px-4 py-2 text-gray-700 hover:bg-blue-50"
+                        className="block px-4 py-2 text-gray-700 hover:bg-green-50"
                         onClick={() => setActiveDropdown(null)}
                       >
                         {item.label}
@@ -109,13 +115,13 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* User Profile & Buttons */}
+        {/* User Profile & Cart */}
         <div className="hidden lg:flex space-x-4 items-center">
           {user ? (
             <div className="relative">
               <button
                 onClick={() => toggleDropdown("profile")}
-                className="text-gray-700 hover:text-blue-600 flex items-center cursor-pointer"
+                className="text-gray-700 hover:text-green-600 flex items-center cursor-pointer"
               >
                 <HiUserCircle className="w-8 h-8 mr-2" />
                 <span>{user.name}</span>
@@ -180,7 +186,7 @@ const Navbar = () => {
             className="fixed top-0 right-0 w-full md:w-1/2 h-full bg-white shadow-lg p-6 lg:hidden z-50"
           >
             <div className="p-4 flex items-center justify-between">
-              <Link to="/" className="text-2xl font-bold text-blue-600">
+              <Link to="/" className="text-2xl font-bold">
                 <img src={Logo} alt="Logo" height={30} width={60} />
               </Link>
               <button onClick={() => setIsMobileMenuOpen(false)}>

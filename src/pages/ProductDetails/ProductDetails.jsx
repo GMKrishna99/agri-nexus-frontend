@@ -1,0 +1,106 @@
+// Old Product Details Component
+export const OldProductDetails = () => {
+  return (
+    <div className="text-center text-gray-500">
+      Old Product Details Component
+    </div>
+  );
+};
+
+// Updated Product Details Component
+import { useParams } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { HiShoppingCart } from "react-icons/hi";
+import { FaTractor, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { PRODUCTS } from "@/constants/marketplace/ViewAllProducts.constance";
+
+const ProductDetails = () => {
+  const { id } = useParams();
+  const product = PRODUCTS.find((item) => item.id === parseInt(id));
+
+  if (!product) {
+    return <div className="text-center text-red-500">Product not found!</div>;
+  }
+
+  return (
+    <div className="max-w-screen-lg mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Product Image */}
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-96 object-cover rounded-lg shadow-lg"
+        />
+
+        {/* Product Details */}
+        <div>
+          <h1 className="text-3xl font-bold">{product.name}</h1>
+          <p className="text-gray-600 mt-2">
+            {product.type === "vehicle" ||
+            product.type === "machine" ||
+            product.type === "tool"
+              ? `$${product.price}/hour`
+              : `$${product.price}`}
+          </p>
+
+          {/* Stock Availability */}
+          <p className="mt-2 text-sm text-gray-600">
+            {product.stock > 0 ? (
+              <span className="text-green-600">
+                In Stock ({product.stock} available)
+              </span>
+            ) : (
+              <span className="text-red-600">Out of Stock</span>
+            )}
+          </p>
+
+          {/* Description */}
+          <h3 className="text-lg font-semibold mt-4">Description</h3>
+          <p className="mt-2 text-gray-700">{product.description}</p>
+
+          {/* Buttons */}
+          <div className="mt-6 flex space-x-4">
+            <Button className={"bg-green-600"}>
+              {product.type === "vehicle" ||
+              product.type === "machine" ||
+              product.type === "tool" ? (
+                <FaTractor className="mr-2" />
+              ) : (
+                <HiShoppingCart className="mr-2" />
+              )}
+              {product.type === "vehicle" ||
+              product.type === "machine" ||
+              product.type === "tool"
+                ? "Book Now"
+                : "Buy Now"}
+            </Button>
+
+            <Link to="/marketplace/view-all-products">
+              <Button variant="outline">Back to Products</Button>
+            </Link>
+          </div>
+
+          {/* Reviews */}
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold">Customer Reviews</h3>
+          </div>
+          <div className="mt-2 space-y-4 ">
+            {product.comments.map((review, index) => (
+              <div key={index} className="border p-4 rounded-lg">
+                <div className="flex items-center">
+                  <FaStar className="text-yellow-500 mr-1" />
+                  <span className="text-sm font-medium">{review.rating}</span>
+                </div>
+                <p className="text-sm text-gray-600 mt-1">{review.comment}</p>
+                <p className="text-xs text-gray-500 mt-2">- {review.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductDetails;

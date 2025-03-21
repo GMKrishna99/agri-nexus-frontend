@@ -3,7 +3,7 @@ export const NAVBAR_ITEMS = [
     label: "Marketplace",
     role: ["Farmer", "Vendor"],
     dropdown: [
-      { label: "View All Products", path: "/marketplace" },
+      { label: "View All Products", path: "marketplace/view-all-products" },
       { label: "Seeds & Crops", path: "/marketplace/seeds-crops" },
       {
         label: "Fertilizers & Pesticides",

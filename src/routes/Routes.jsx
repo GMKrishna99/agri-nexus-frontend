@@ -49,6 +49,9 @@ import Payment from "@/pages/payment";
 import OrderConfirmation from "@/pages/OrderConfirmation";
 import LoginPage from "@/pages/LoginPage";
 import SignUpPage from "@/pages/SignUpPage";
+import ProductDetails from "@/pages/ProductDetails/ProductDetails";
+import SeedCropProductDetails from "@/pages/ProductDetails/SeedCropProductDetails";
+import FertilizerProduct from "@/pages/ProductDetails/FertilizerProductDetail";
 
 const AppRoutes = () => {
   return (
@@ -66,7 +69,10 @@ const AppRoutes = () => {
               <Navbar />
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/marketplace" element={<ViewAllProducts />} />
+                <Route
+                  path="/marketplace/view-all-products"
+                  element={<ViewAllProducts />}
+                />
                 <Route
                   path="/marketplace/seeds-crops"
                   element={<SeedCrops />}
@@ -183,6 +189,15 @@ const AppRoutes = () => {
                 <Route
                   path="/order-confirmation"
                   element={<OrderConfirmation />}
+                />
+                <Route path="/product/:id" element={<ProductDetails />} />
+                <Route
+                  path="/seed-crop-product-details/:id"
+                  element={<SeedCropProductDetails />}
+                />
+                <Route
+                  path="/fertilizer-product-details/:id"
+                  element={<FertilizerProduct />}
                 />
               </Routes>
               <Footer />
