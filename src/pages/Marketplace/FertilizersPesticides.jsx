@@ -6,6 +6,7 @@ import { products } from "@/constants/marketplace/FettilizersPestisides";
 import Banner from "@/components/Banner";
 import { Link, useNavigate } from "react-router-dom";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import Fertilizers from "@/assets/modern-organic-fertiliser-advantages.jpg";
 
 const getStars = (rating) => {
   const fullStars = Math.floor(rating);
@@ -34,7 +35,7 @@ const FertilizersPesticides = () => {
         heading="Boost Your Crops with Premium Fertilizers & Pesticides!"
         subtext="Shop our selection of high-quality fertilizers and pesticides to keep your plants healthy and pest-free."
         buttonText="Explore Products"
-        imageUrl="/src/assets/images.jpg"
+        imageUrl={Fertilizers}
       />
 
       {/* Featured Products */}

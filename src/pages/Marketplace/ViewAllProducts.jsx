@@ -6,6 +6,7 @@ import { HiShoppingCart } from "react-icons/hi";
 import { FaTractor, FaStar } from "react-icons/fa";
 import { PRODUCTS } from "@/constants/marketplace/ViewAllProducts.constance";
 import Banner from "@/components/Banner";
+import ProductBanner from "@/assets/farm-equipment-market.webp";
 
 const ProductList = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -39,7 +40,7 @@ const ProductList = () => {
           "High-quality products for a better yield and sustainable farming."
         }
         buttonText={"Explore Products"}
-        imageUrl={"/src/assets/images.jpg"}
+        imageUrl={ProductBanner}
       />
       <section className="max-w-screen-xl mx-auto px-4 py-6">
         {/* Category Filter Section */}
@@ -80,8 +81,8 @@ const ProductList = () => {
                 <h2 className="text-lg font-semibold mt-2">{item.name}</h2>
                 <p className="text-gray-600">
                   {["vehicle", "machine", "tool"].includes(item.type)
-                    ? `$${item.price}/hour`
-                    : `$${item.price}`}
+                    ? `${item.price}`
+                    : `${item.price}`}
                 </p>
                 <div className="flex items-center mt-1">
                   <FaStar className="text-yellow-500 mr-1" />

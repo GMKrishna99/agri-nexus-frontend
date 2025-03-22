@@ -5,6 +5,15 @@ import {
   FaMoneyCheckAlt,
   FaBookOpen,
 } from "react-icons/fa";
+import SeedsCrops from "@/assets/seeds-crops/sunflower.webp";
+import FertilizersPesticides from "@/assets/Fertilizers/bio.webp";
+import EquipmentMachinery from "@/assets/ViewAllProducts/tractor.jpg";
+import OrganicProducts from "@/assets/Fertilizers/organic compost.webp";
+import FarmServices from "@/assets/ViewAllProducts/chain saw.webp";
+
+import GovernmentPolicies from "@/assets/live-updates/govt.png";
+import WeatherForecast from "@/assets/live-updates/weather.webp";
+import CropMarketPrices from "@/assets/live-updates/Crop Market Prices.png";
 
 export const FEATURES = [
   {
@@ -35,15 +44,39 @@ export const FEATURES = [
 ];
 
 export const MARKETPLACE_CATEGORIES = [
-  "Seeds & Crops",
-  "Fertilizers & Pesticides",
-  "Equipment & Machinery",
-  "Organic Products",
-  "Farm Services",
+  {
+    name: "Seeds & Crops",
+    image: SeedsCrops, // Imported image
+  },
+  {
+    name: "Fertilizers & Pesticides",
+    image: FertilizersPesticides, // Imported image
+  },
+  {
+    name: "Equipment & Machinery",
+    image: EquipmentMachinery, // Imported image
+  },
+  {
+    name: "Organic Products",
+    image: OrganicProducts, // Imported image
+  },
+  {
+    name: "Farm Services",
+    image: FarmServices, // Imported image
+  },
 ];
 
 export const LIVE_UPDATES = [
-  "Latest Government Policies",
-  "Weather Forecast",
-  "Crop Market Prices",
+  {
+    title: "Latest Government Policies",
+    image: GovernmentPolicies, // Imported image
+  },
+  {
+    title: "Weather Forecast",
+    image: WeatherForecast, // Imported image
+  },
+  {
+    title: "Crop Market Prices",
+    image: CropMarketPrices, // Imported image
+  },
 ];

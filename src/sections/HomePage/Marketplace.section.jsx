@@ -1,25 +1,35 @@
-import { Card } from "@/components/ui/card";
-import { MARKETPLACE_CATEGORIES } from "@/constants/HomeData";
 import React from "react";
+import { MARKETPLACE_CATEGORIES } from "@/constants/HomeData"; // Adjust the import path
 
-const MarketPlace = () => {
+const MarketplaceCategories = () => {
   return (
-    <section className="container mx-auto py-8 px-4 sm:py-12 sm:px-8 lg:px-16 xl:px-20 text-center">
-      <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
-        Explore Marketplace
+    <div className="container mx-auto p-6">
+      <h2 className="text-3xl font-bold text-center mb-8">
+        Marketplace Categories
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {MARKETPLACE_CATEGORIES.map((category, idx) => (
-          <Card
-            key={idx}
-            className="p-6 flex items-center justify-center text-center hover:shadow-lg transition-all duration-300 cursor-pointer"
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {MARKETPLACE_CATEGORIES.map((category, index) => (
+          <div
+            key={index}
+            className="relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
           >
-            <h3 className="text-lg sm:text-xl font-bold">{category}</h3>
-          </Card>
+            {/* Category Image */}
+            <img
+              src={category.image}
+              alt={category.name}
+              className="w-full h-48 object-cover"
+            />
+            {/* Category Name */}
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-all duration-300 hover:bg-black/40">
+              <h3 className="text-white text-2xl font-bold text-center">
+                {category.name}
+              </h3>
+            </div>
+          </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default MarketPlace;
+export default MarketplaceCategories;

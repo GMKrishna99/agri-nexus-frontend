@@ -7,6 +7,7 @@ import {
   FEATURED_PRODUCTS,
 } from "@/constants/marketplace/SeedCrops.constance";
 import Banner from "@/components/Banner";
+import SeedCrop from "@/assets/seeds.jpg";
 
 const SeedsCrops = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -31,7 +32,7 @@ const SeedsCrops = () => {
           "High-quality seeds for a better yield and sustainable farming."
         }
         buttonText={"Explore Products"}
-        imageUrl={"/src/assets/images.jpg"}
+        imageUrl={SeedCrop}
       />
       <section className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10">
         {/* Categories Section */}

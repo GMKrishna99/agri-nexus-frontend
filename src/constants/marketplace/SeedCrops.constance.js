@@ -1,3 +1,29 @@
+import Wheetseeds from "@/assets/seeds-crops/wheet seeds.jpg";
+import Tomato from "@/assets/seeds-crops/tomato.jpg";
+import Mango from "@/assets/seeds-crops/mango.webp";
+import Corn from "@/assets/seeds-crops/corn.jpg";
+import Carrot from "@/assets/seeds-crops/carrot.webp";
+import Sunflower from "@/assets/seeds-crops/sunflower.webp";
+import Basil from "@/assets/seeds-crops/basil.jpg";
+import Potato from "@/assets/seeds-crops/potato.webp";
+import Almond from "@/assets/seeds-crops/almond.jpg";
+import Lavender from "@/assets/seeds-crops/lavender.webp";
+import Coffee from "@/assets/seeds-crops/coffee.webp";
+import Chili from "@/assets/seeds-crops/chilli.webp";
+import Strawberry from "@/assets/seeds-crops/strawberry.jpg";
+import Soybean from "@/assets/seeds-crops/soya.jpg";
+import Peppermint from "@/assets/seeds-crops/peppermint.jpeg";
+import Pumpkin from "@/assets/seeds-crops/pumpkin.jpg";
+import Cucumber from "@/assets/seeds-crops/cucumber.jpg";
+import Blueberry from "@/assets/seeds-crops/blue.jpg";
+import Garlic from "@/assets/seeds-crops/garlic.jpg";
+import Rosemary from "@/assets/seeds-crops/rosemary.jpg";
+import Peanut from "@/assets/seeds-crops/peanut.jpg";
+import BellPepper from "@/assets/seeds-crops/bell peper.jpg";
+import Walnut from "@/assets/seeds-crops/walnut.webp";
+import Cinnamon from "@/assets/seeds-crops/cinnamon.jpg";
+import Spinach from "@/assets/seeds-crops/spinach.webp";
+
 export const CATEGORIES = [
   { id: 1, name: "Cereals" },
   { id: 2, name: "Vegetables" },
@@ -17,8 +43,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 1,
     name: "Wheat Seeds",
-    price: "$25.99",
-    image: "/images/wheat.jpg",
+    price: "₹2,079", // Approx. $25.99 → ₹2,079
+    image: Wheetseeds,
     season: "Winter",
     waterConsumption: "4000 liters/day/hectare",
     growthDuration: "120 days",
@@ -31,8 +57,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 2,
     name: "Tomato Seeds",
-    price: "$15.99",
-    image: "/images/tomato.jpg",
+    price: "₹1,279", // Approx. $15.99 → ₹1,279
+    image: Tomato,
     season: "Summer",
     waterConsumption: "5000 liters/day/hectare",
     growthDuration: "90 days",
@@ -45,8 +71,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 3,
     name: "Mango Crop",
-    price: "$500.00",
-    image: "/images/mango.jpg",
+    price: "₹40,000", // Approx. $500.00 → ₹40,000
+    image: Mango,
     season: "Spring",
     waterConsumption: "6000 liters/day/hectare",
     growthDuration: "5-7 years (tree maturity)",
@@ -59,8 +85,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 4,
     name: "Corn Seeds",
-    price: "$30.00",
-    image: "/images/corn.jpg",
+    price: "₹2,399", // Approx. $30.00 → ₹2,399
+    image: Corn,
     season: "Spring",
     waterConsumption: "6000 liters/day/hectare",
     growthDuration: "90-120 days",
@@ -73,8 +99,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 5,
     name: "Carrot Seeds",
-    price: "$10.50",
-    image: "/images/carrot.jpg",
+    price: "₹840", // Approx. $10.50 → ₹840
+    image: Carrot,
     season: "Winter",
     waterConsumption: "3500 liters/day/hectare",
     growthDuration: "70-80 days",
@@ -87,8 +113,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 6,
     name: "Sunflower Seeds",
-    price: "$20.75",
-    image: "/images/sunflower.jpg",
+    price: "₹1,660", // Approx. $20.75 → ₹1,660
+    image: Sunflower,
     season: "Summer",
     waterConsumption: "4500 liters/day/hectare",
     growthDuration: "80-120 days",
@@ -101,8 +127,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 7,
     name: "Basil Seeds",
-    price: "$8.99",
-    image: "/images/basil.jpg",
+    price: "₹719", // Approx. $8.99 → ₹719
+    image: Basil,
     season: "Spring",
     waterConsumption: "3000 liters/day/hectare",
     growthDuration: "60-90 days",
@@ -115,8 +141,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 8,
     name: "Potato Tubers",
-    price: "$12.00",
-    image: "/images/potato.jpg",
+    price: "₹960", // Approx. $12.00 → ₹960
+    image: Potato,
     season: "Spring",
     waterConsumption: "4000 liters/day/hectare",
     growthDuration: "90-120 days",
@@ -129,8 +155,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 9,
     name: "Almond Saplings",
-    price: "$75.00",
-    image: "/images/almond.jpg",
+    price: "₹6,000", // Approx. $75.00 → ₹6,000
+    image: Almond,
     season: "Spring",
     waterConsumption: "7000 liters/day/hectare",
     growthDuration: "3-5 years (tree maturity)",
@@ -143,8 +169,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 10,
     name: "Lavender Plants",
-    price: "$18.50",
-    image: "/images/lavender.jpg",
+    price: "₹1,480", // Approx. $18.50 → ₹1,480
+    image: Lavender,
     season: "Summer",
     waterConsumption: "2500 liters/day/hectare",
     growthDuration: "90-120 days",
@@ -157,8 +183,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 11,
     name: "Coffee Plants",
-    price: "$120.00",
-    image: "/images/coffee.jpg",
+    price: "₹9,600", // Approx. $120.00 → ₹9,600
+    image: Coffee,
     season: "Year-Round",
     waterConsumption: "5000 liters/day/hectare",
     growthDuration: "3-4 years (tree maturity)",
@@ -171,8 +197,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 12,
     name: "Chili Pepper Seeds",
-    price: "$7.99",
-    image: "/images/chili.jpg",
+    price: "₹639", // Approx. $7.99 → ₹639
+    image: Chili,
     season: "Summer",
     waterConsumption: "3000 liters/day/hectare",
     growthDuration: "90-120 days",
@@ -185,8 +211,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 13,
     name: "Strawberry Plants",
-    price: "$22.00",
-    image: "/images/strawberry.jpg",
+    price: "₹1,760", // Approx. $22.00 → ₹1,760
+    image: Strawberry,
     season: "Spring",
     waterConsumption: "4000 liters/day/hectare",
     growthDuration: "60-90 days",
@@ -199,8 +225,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 14,
     name: "Soybean Seeds",
-    price: "$18.00",
-    image: "/images/soybean.jpg",
+    price: "₹1,440", // Approx. $18.00 → ₹1,440
+    image: Soybean,
     season: "Summer",
     waterConsumption: "4500 liters/day/hectare",
     growthDuration: "100-120 days",
@@ -213,8 +239,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 15,
     name: "Peppermint Plants",
-    price: "$9.99",
-    image: "/images/peppermint.jpg",
+    price: "₹799", // Approx. $9.99 → ₹799
+    image: Peppermint,
     season: "Spring",
     waterConsumption: "3000 liters/day/hectare",
     growthDuration: "60-90 days",
@@ -227,8 +253,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 16,
     name: "Pumpkin Seeds",
-    price: "$14.50",
-    image: "/images/pumpkin.jpg",
+    price: "₹1,160", // Approx. $14.50 → ₹1,160
+    image: Pumpkin,
     season: "Summer",
     waterConsumption: "5000 liters/day/hectare",
     growthDuration: "90-120 days",
@@ -241,8 +267,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 17,
     name: "Cucumber Seeds",
-    price: "$12.00",
-    image: "/images/cucumber.jpg",
+    price: "₹960", // Approx. $12.00 → ₹960
+    image: Cucumber,
     season: "Summer",
     waterConsumption: "4000 liters/day/hectare",
     growthDuration: "50-70 days",
@@ -255,8 +281,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 18,
     name: "Blueberry Bushes",
-    price: "$45.00",
-    image: "/images/blueberry.jpg",
+    price: "₹3,600", // Approx. $45.00 → ₹3,600
+    image: Blueberry,
     season: "Spring",
     waterConsumption: "5000 liters/day/hectare",
     growthDuration: "2-3 years (bush maturity)",
@@ -269,8 +295,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 19,
     name: "Garlic Bulbs",
-    price: "$6.99",
-    image: "/images/garlic.jpg",
+    price: "₹559", // Approx. $6.99 → ₹559
+    image: Garlic,
     season: "Winter",
     waterConsumption: "3000 liters/day/hectare",
     growthDuration: "90-120 days",
@@ -283,8 +309,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 20,
     name: "Rosemary Plants",
-    price: "$14.99",
-    image: "/images/rosemary.jpg",
+    price: "₹1,199", // Approx. $14.99 → ₹1,199
+    image: Rosemary,
     season: "Spring",
     waterConsumption: "2500 liters/day/hectare",
     growthDuration: "90-120 days",
@@ -297,8 +323,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 21,
     name: "Peanut Seeds",
-    price: "$10.00",
-    image: "/images/peanut.jpg",
+    price: "₹800", // Approx. $10.00 → ₹800
+    image: Peanut,
     season: "Summer",
     waterConsumption: "4000 liters/day/hectare",
     growthDuration: "120-150 days",
@@ -311,8 +337,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 22,
     name: "Bell Pepper Seeds",
-    price: "$11.50",
-    image: "/images/bell-pepper.jpg",
+    price: "₹920", // Approx. $11.50 → ₹920
+    image: BellPepper,
     season: "Summer",
     waterConsumption: "4500 liters/day/hectare",
     growthDuration: "70-90 days",
@@ -325,8 +351,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 23,
     name: "Walnut Saplings",
-    price: "$90.00",
-    image: "/images/walnut.jpg",
+    price: "₹7,200", // Approx. $90.00 → ₹7,200
+    image: Walnut,
     season: "Spring",
     waterConsumption: "6000 liters/day/hectare",
     growthDuration: "5-7 years (tree maturity)",
@@ -339,8 +365,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 24,
     name: "Cinnamon Saplings",
-    price: "$65.00",
-    image: "/images/cinnamon.jpg",
+    price: "₹5,200", // Approx. $65.00 → ₹5,200
+    image: Cinnamon,
     season: "Year-Round",
     waterConsumption: "4000 liters/day/hectare",
     growthDuration: "2-3 years (tree maturity)",
@@ -353,8 +379,8 @@ export const FEATURED_PRODUCTS = [
   {
     id: 25,
     name: "Spinach Seeds",
-    price: "$7.50",
-    image: "/images/spinach.jpg",
+    price: "₹600", // Approx. $7.50 → ₹600
+    image: Spinach,
     season: "Winter",
     waterConsumption: "3000 liters/day/hectare",
     growthDuration: "40-50 days",

@@ -1,10 +1,18 @@
+import Urea from "@/assets/Fertilizers/Urea.jpeg";
+import Organic from "@/assets/Fertilizers/organic compost.webp";
+import NPK from "@/assets/Fertilizers/NPK.jpeg";
+import Bio from "@/assets/Fertilizers/bio.webp";
+import Glyphosate from "@/assets/Fertilizers/glyphosate.jpeg";
+import Neem from "@/assets/Fertilizers/neem oil.jpg";
+import Copper from "@/assets/Fertilizers/copper.jpg";
+
 export const products = [
   {
     id: 1, // Unique ID
     name: "Urea Fertilizer",
     type: "Chemical",
-    price: "$15.99",
-    image: "/images/urea.jpg",
+    price: "₹1,199", // Approx. $15.99 → ₹1,199
+    image: Urea,
     description:
       "Urea fertilizer is a highly efficient nitrogen source for plants, promoting rapid growth and lush foliage. Ideal for agricultural and gardening use.",
     reviews: [
@@ -26,8 +34,8 @@ export const products = [
     id: 2, // Unique ID
     name: "Organic Compost",
     type: "Organic",
-    price: "$12.50",
-    image: "/images/compost.jpg",
+    price: "₹950", // Approx. $12.50 → ₹950
+    image: Organic,
     description:
       "Organic compost is a natural soil enhancer made from decomposed plant and animal waste. Improves soil structure and fertility.",
     reviews: [
@@ -49,8 +57,8 @@ export const products = [
     id: 3, // Unique ID
     name: "NPK 20-20-20",
     type: "Chemical",
-    price: "$18.99",
-    image: "/images/npk.jpg",
+    price: "₹1,499", // Approx. $18.99 → ₹1,499
+    image: NPK,
     description:
       "A balanced fertilizer with equal parts Nitrogen, Phosphorus, and Potassium. Suitable for all types of plants and crops.",
     reviews: [
@@ -72,8 +80,8 @@ export const products = [
     id: 4, // Unique ID
     name: "Bio Fertilizer",
     type: "Organic",
-    price: "$22.00",
-    image: "/images/biofert.jpg",
+    price: "₹1,699", // Approx. $22.00 → ₹1,699
+    image: Bio,
     description:
       "Bio fertilizer contains beneficial microorganisms that improve soil health and nutrient absorption. Eco-friendly and sustainable.",
     reviews: [
@@ -95,8 +103,8 @@ export const products = [
     id: 5, // Unique ID
     name: "Glyphosate Herbicide",
     type: "Herbicide",
-    price: "$25.99",
-    image: "/images/glyphosate.jpg",
+    price: "₹1,999", // Approx. $25.99 → ₹1,999
+    image: Glyphosate,
     description:
       "A powerful herbicide for controlling weeds and unwanted vegetation. Effective for large-scale agricultural use.",
     reviews: [
@@ -118,8 +126,8 @@ export const products = [
     id: 6, // Unique ID
     name: "Neem Oil Spray",
     type: "Insecticide",
-    price: "$10.99",
-    image: "/images/neemoil.jpg",
+    price: "₹799", // Approx. $10.99 → ₹799
+    image: Neem,
     description:
       "A natural insecticide made from neem seeds. Safe for plants and effective against pests like aphids and mites.",
     reviews: [
@@ -141,8 +149,8 @@ export const products = [
     id: 7, // Unique ID
     name: "Copper Fungicide",
     type: "Fungicide",
-    price: "$14.50",
-    image: "/images/copperfungi.jpg",
+    price: "₹1,099", // Approx. $14.50 → ₹1,099
+    image: Copper,
     description:
       "A fungicide containing copper to control fungal diseases in plants. Suitable for fruits, vegetables, and ornamental plants.",
     reviews: [

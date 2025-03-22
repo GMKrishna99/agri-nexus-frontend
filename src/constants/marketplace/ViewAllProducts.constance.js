@@ -1,9 +1,30 @@
+import organicFertilizer from "@/assets/ViewAllProducts/orgamic Fertilizer.webp";
+import HighQualitySeeds from "@/assets/ViewAllProducts/ihgh quality seeds.webp";
+import Tractor from "@/assets/ViewAllProducts/tractor.jpg";
+import PlowingMachine from "@/assets/ViewAllProducts/plowing machine.avif";
+import IrrigationPump from "@/assets/ViewAllProducts/irrigation pump.jpg";
+import GreenhouseKit from "@/assets/ViewAllProducts/green house kit.jpg";
+import HarvesterMachine from "@/assets/ViewAllProducts/Harvester Machine.jpg";
+import SoilTestingKit from "@/assets/ViewAllProducts/Soil Testing Kit.jpg";
+import ElectricFenceKit from "@/assets/ViewAllProducts/electric fence kit.webp";
+import FarmTruck from "@/assets/ViewAllProducts/farm truck.jpg";
+import Chainsaw from "@/assets/ViewAllProducts/chain saw.webp";
+import DroneSprayer from "@/assets/ViewAllProducts/drone sprayer.webp";
+import Wheelbarrow from "@/assets/ViewAllProducts/wheel barrow.jpg";
+import SeedSpreader from "@/assets/ViewAllProducts/seed spreader.webp";
+import PortableGenerator from "@/assets/ViewAllProducts/generator.jpg";
+import PruningShears from "@/assets/ViewAllProducts/pruning shears.jpg";
+import Cultivator from "@/assets/ViewAllProducts/cultivator.jpg";
+import HayBaler from "@/assets/ViewAllProducts/hay baler.avif";
+import LivestockTrailer from "@/assets/ViewAllProducts/livestock trailer.jpg";
+import GrainMill from "@/assets/ViewAllProducts/grain mill.jpg";
+
 export const PRODUCTS = [
   {
     id: 1,
     name: "Organic Fertilizer",
-    price: 15.99,
-    image: "/images/fertilizer.jpg",
+    price: "₹1,279", // Approx. $15.99 → ₹1,279
+    image: organicFertilizer,
     type: "product",
     description:
       "A high-quality organic fertilizer that improves soil fertility and promotes healthy plant growth. Ideal for vegetables, flowers, and fruit-bearing plants. Contains essential nutrients to enhance crop yield.",
@@ -44,8 +65,8 @@ export const PRODUCTS = [
   {
     id: 2,
     name: "High-Quality Seeds",
-    price: 8.49,
-    image: "/images/seeds.jpg",
+    price: "₹679", // Approx. $8.49 → ₹679
+    image: HighQualitySeeds,
     type: "product",
     description:
       "Premium seeds with a high germination rate for optimal yield. Specially selected for better resistance against pests and diseases.",
@@ -83,8 +104,8 @@ export const PRODUCTS = [
   {
     id: 3,
     name: "Tractor Rental",
-    price: 25.0, // Hourly rate
-    image: "/images/tractor.jpg",
+    price: "₹2,000/hour", // Approx. $25.00 → ₹2,000/hour
+    image: Tractor,
     type: "vehicle",
     description:
       "Rent a high-performance tractor for agricultural use. Ideal for plowing, tilling, and heavy-duty farming tasks.",
@@ -123,8 +144,8 @@ export const PRODUCTS = [
   {
     id: 4,
     name: "Plowing Machine",
-    price: 30.0, // Hourly rate
-    image: "/images/plow.jpg",
+    price: "₹2,400/hour", // Approx. $30.00 → ₹2,400/hour
+    image: PlowingMachine,
     type: "vehicle",
     description:
       "Heavy-duty plowing machine for efficient land preparation. Reduces manual effort and improves soil aeration.",
@@ -163,8 +184,8 @@ export const PRODUCTS = [
   {
     id: 5,
     name: "Irrigation Pump",
-    price: 250.0,
-    image: "/images/pump.jpg",
+    price: "₹20,000", // Approx. $250.00 → ₹20,000
+    image: IrrigationPump,
     type: "product",
     description:
       "High-efficiency irrigation pump suitable for all farm sizes. Ensures even water distribution and minimizes wastage.",
@@ -203,8 +224,8 @@ export const PRODUCTS = [
   {
     id: 6,
     name: "Greenhouse Kit",
-    price: 499.99,
-    image: "/images/greenhouse.jpg",
+    price: "₹39,999", // Approx. $499.99 → ₹39,999
+    image: GreenhouseKit,
     type: "product",
     description:
       "A complete greenhouse kit for year-round farming. Includes durable frames, UV-resistant covers, and ventilation systems.",
@@ -242,8 +263,8 @@ export const PRODUCTS = [
   {
     id: 7,
     name: "Harvester Machine",
-    price: 50.0, // Hourly rate
-    image: "/images/harvester.jpg",
+    price: "₹4,000/hour", // Approx. $50.00 → ₹4,000/hour
+    image: HarvesterMachine,
     type: "vehicle",
     description:
       "Advanced harvester machine for efficient crop harvesting. Suitable for wheat, corn, and other grains.",
@@ -282,8 +303,8 @@ export const PRODUCTS = [
   {
     id: 8,
     name: "Soil Testing Kit",
-    price: 29.99,
-    image: "/images/soil-test.jpg",
+    price: "₹2,399", // Approx. $29.99 → ₹2,399
+    image: SoilTestingKit,
     type: "product",
     description:
       "A comprehensive soil testing kit to analyze pH levels, nutrient content, and soil health. Essential for optimal crop growth.",
@@ -322,8 +343,8 @@ export const PRODUCTS = [
   {
     id: 9,
     name: "Electric Fence Kit",
-    price: 199.99,
-    image: "/images/fence.jpg",
+    price: "₹15,999", // Approx. $199.99 → ₹15,999
+    image: ElectricFenceKit,
     type: "product",
     description:
       "An electric fence kit to protect your farm from pests and intruders. Easy to install and highly effective.",
@@ -361,8 +382,8 @@ export const PRODUCTS = [
   {
     id: 10,
     name: "Farm Truck Rental",
-    price: 35.0, // Hourly rate
-    image: "/images/truck.jpg",
+    price: "₹2,800/hour", // Approx. $35.00 → ₹2,800/hour
+    image: FarmTruck,
     type: "vehicle",
     description:
       "Rent a sturdy farm truck for transporting goods, equipment, and produce. Ideal for heavy-duty tasks.",
@@ -400,8 +421,8 @@ export const PRODUCTS = [
   {
     id: 11,
     name: "Chainsaw",
-    price: 20.0, // Hourly rate
-    image: "/images/chainsaw.jpg",
+    price: "₹1,600/hour", // Approx. $20.00 → ₹1,600/hour
+    image: Chainsaw,
     type: "tool",
     description:
       "A powerful chainsaw for cutting trees, branches, and logs. Ideal for farm maintenance and land clearing.",
@@ -439,8 +460,8 @@ export const PRODUCTS = [
   {
     id: 12,
     name: "Drone Sprayer",
-    price: 40.0, // Hourly rate
-    image: "/images/drone.jpg",
+    price: "₹3,200/hour", // Approx. $40.00 → ₹3,200/hour
+    image: DroneSprayer,
     type: "machine",
     description:
       "A drone sprayer for precision pesticide and fertilizer application. Covers large areas quickly and efficiently.",
@@ -479,8 +500,8 @@ export const PRODUCTS = [
   {
     id: 13,
     name: "Wheelbarrow",
-    price: 5.0, // Hourly rate
-    image: "/images/wheelbarrow.jpg",
+    price: "₹400/hour", // Approx. $5.00 → ₹400/hour
+    image: Wheelbarrow,
     type: "tool",
     description:
       "A sturdy wheelbarrow for transporting soil, compost, and other materials around the farm.",
@@ -518,8 +539,8 @@ export const PRODUCTS = [
   {
     id: 14,
     name: "Seed Spreader",
-    price: 15.0, // Hourly rate
-    image: "/images/spreader.jpg",
+    price: "₹1,200/hour", // Approx. $15.00 → ₹1,200/hour
+    image: SeedSpreader,
     type: "machine",
     description:
       "A seed spreader for even distribution of seeds across large fields. Adjustable settings for different seed types.",
@@ -557,8 +578,8 @@ export const PRODUCTS = [
   {
     id: 15,
     name: "Portable Generator",
-    price: 25.0, // Hourly rate
-    image: "/images/generator.jpg",
+    price: "₹2,000/hour", // Approx. $25.00 → ₹2,000/hour
+    image: PortableGenerator,
     type: "machine",
     description:
       "A portable generator for powering tools and equipment in remote areas of the farm. Reliable and easy to use.",
@@ -596,8 +617,8 @@ export const PRODUCTS = [
   {
     id: 16,
     name: "Pruning Shears",
-    price: 12.99,
-    image: "/images/shears.jpg",
+    price: "₹1,039", // Approx. $12.99 → ₹1,039
+    image: PruningShears,
     type: "tool",
     description:
       "High-quality pruning shears for trimming plants, shrubs, and trees. Sharp and durable blades for precise cuts.",
@@ -635,8 +656,8 @@ export const PRODUCTS = [
   {
     id: 17,
     name: "Cultivator",
-    price: 18.0, // Hourly rate
-    image: "/images/cultivator.jpg",
+    price: "₹1,440/hour", // Approx. $18.00 → ₹1,440/hour
+    image: Cultivator,
     type: "machine",
     description:
       "A cultivator for tilling soil and preparing seedbeds. Lightweight and easy to operate.",
@@ -674,8 +695,8 @@ export const PRODUCTS = [
   {
     id: 18,
     name: "Hay Baler",
-    price: 45.0, // Hourly rate
-    image: "/images/hay-baler.jpg",
+    price: "₹3,600/hour", // Approx. $45.00 → ₹3,600/hour
+    image: HayBaler,
     type: "machine",
     description:
       "A hay baler for compacting hay into bales for easy storage and transport. Suitable for large farms.",
@@ -713,8 +734,8 @@ export const PRODUCTS = [
   {
     id: 19,
     name: "Livestock Trailer",
-    price: 40.0, // Hourly rate
-    image: "/images/trailer.jpg",
+    price: "₹3,200/hour", // Approx. $40.00 → ₹3,200/hour
+    image: LivestockTrailer,
     type: "vehicle",
     description:
       "A livestock trailer for transporting animals safely and comfortably. Durable and easy to tow.",
@@ -752,8 +773,8 @@ export const PRODUCTS = [
   {
     id: 20,
     name: "Grain Mill",
-    price: 300.0,
-    image: "/images/grain-mill.jpg",
+    price: "₹24,000", // Approx. $300.00 → ₹24,000
+    image: GrainMill,
     type: "machine",
     description:
       "A grain mill for grinding grains into flour. Suitable for small to medium-sized farms.",

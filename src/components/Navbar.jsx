@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Logo from "../assets/logo.png";
 import CartSheet from "@/components/CartSheet";
+import OrganicF from "@/assets/ViewAllProducts/orgamic Fertilizer.webp";
+import HighQuality from "@/assets/ViewAllProducts/ihgh quality seeds.webp";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,13 +19,13 @@ const Navbar = () => {
       id: 1,
       name: "Organic Fertilizer",
       price: 15.99,
-      image: "/images/fertilizer.jpg",
+      image: OrganicF,
     },
     {
       id: 2,
       name: "High-Quality Seeds",
       price: 8.49,
-      image: "/images/seeds.jpg",
+      image: HighQuality,
     },
   ]);
   const [user, setUser] = useState(null);

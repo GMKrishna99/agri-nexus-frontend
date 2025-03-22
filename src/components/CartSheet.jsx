@@ -5,32 +5,29 @@ import { Button } from "@/components/ui/button";
 import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import OrganicF from "@/assets/ViewAllProducts/orgamic Fertilizer.webp";
+import HighQuality from "@/assets/ViewAllProducts/ihgh quality seeds.webp";
 
 const CartSheet = () => {
   const navigate = useNavigate();
 
   // Initialize Cart with Default Items
-  const [cartItems, setCartItems] = useState(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart"));
-    return storedCart && storedCart.length > 0
-      ? storedCart
-      : [
-          {
-            id: 1,
-            name: "Organic Fertilizer",
-            price: 15.99,
-            quantity: 1,
-            image: "/images/fertilizer.jpg",
-          },
-          {
-            id: 2,
-            name: "High-Quality Seeds",
-            price: 8.49,
-            quantity: 1,
-            image: "/images/seeds.jpg",
-          },
-        ];
-  });
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      name: "Organic Fertilizer",
+      price: 40.99,
+      image: OrganicF,
+      quantity: 1, // Add quantity field
+    },
+    {
+      id: 2,
+      name: "High-Quality Seeds",
+      price: 88.49,
+      image: HighQuality,
+      quantity: 1, // Add quantity field
+    },
+  ]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -106,7 +103,7 @@ const CartSheet = () => {
                 />
                 <div className="flex-1">
                   <h3 className="text-lg font-bold">{item.name}</h3>
-                  <p className="text-gray-600">${item.price.toFixed(2)}</p>
+                  <p className="text-gray-600">₹{item.price.toFixed(2)}</p>
                   <div className="flex items-center gap-2 mt-2">
                     <Button
                       variant="outline"
@@ -137,7 +134,7 @@ const CartSheet = () => {
             ))}
             <div className="flex justify-between text-lg font-semibold mt-4">
               <span>Total:</span>
-              <span>${totalPrice.toFixed(2)}</span>
+              <span>₹{totalPrice.toFixed(2)}</span>
             </div>
             <Button
               className="w-full bg-green-600 hover:bg-green-700 mt-4"
