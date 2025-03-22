@@ -1,9 +1,4 @@
 import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import HomeBanner from "@/assets/Banner-03.webp";
 import Banner from "@/components/Banner";
 
