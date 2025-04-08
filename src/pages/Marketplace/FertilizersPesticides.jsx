@@ -45,9 +45,11 @@ const FertilizersPesticides = () => {
           {products.map((product) => (
             <Card
               key={product.id}
-              className="text-center p-4 border-gray-100 cursor-pointer hover:shadow-lg transition duration-300"
+              className="text-center p-4 border-gray-100 cursor-pointer hover:shadow-lg transition duration-300 "
             >
-              <CardContent>
+              <CardContent
+                className={"flex flex-col items-center justify-between h-full"}
+              >
                 <Link to={`/fertilizer-product-details/${product.id}`}>
                   <img
                     src={product.image}
@@ -73,8 +75,11 @@ const FertilizersPesticides = () => {
                   {product.description}
                 </p>
                 <Button
-                  className="mt-4 w-full"
-                  onClick={() => navigate(`/product/${product.id}`)}
+                  className="mt-4 w-full cursor-pointer"
+                  onClick={() =>
+                    navigate(`/fertilizer-product-details/${product.id}`)
+                  }
+                  variant={"green"}
                 >
                   <HiShoppingCart className="mr-2" /> View Details
                 </Button>

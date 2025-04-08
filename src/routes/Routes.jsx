@@ -52,6 +52,8 @@ import SignUpPage from "@/pages/SignUpPage";
 import ProductDetails from "@/pages/ProductDetails/ProductDetails";
 import SeedCropProductDetails from "@/pages/ProductDetails/SeedCropProductDetails";
 import FertilizerProduct from "@/pages/ProductDetails/FertilizerProductDetail";
+import EquipmentDetails from "@/pages/ProductDetails/EquipmentDetails";
+import OrganicProductDetail from "@/pages/ProductDetails/OrganicProductDetail";
 
 const AppRoutes = () => {
   return (
@@ -90,10 +92,7 @@ const AppRoutes = () => {
                   path="/marketplace/equipment"
                   element={<FarmingEquipment />}
                 />
-                <Route
-                  path="/marketplace/vendor-options"
-                  element={<VendorOptions />}
-                />
+
                 <Route
                   path="/govt-assistance/schemes"
                   element={<LatestSchemesPolicies />}
@@ -198,6 +197,14 @@ const AppRoutes = () => {
                 <Route
                   path="/fertilizer-product-details/:id"
                   element={<FertilizerProduct />}
+                />
+                <Route
+                  path="/equipment-details/:id"
+                  element={<EquipmentDetails />}
+                />
+                <Route
+                  path="/organic-products/:id"
+                  element={<OrganicProductDetail />}
                 />
               </Routes>
               <Footer />

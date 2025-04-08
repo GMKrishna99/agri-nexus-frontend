@@ -6,6 +6,8 @@ import { MdErrorOutline } from "react-icons/md";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Logo from "../assets/logo.png";
+import useAuthStore from "@/store/authStore";
+import { toast } from "react-hot-toast";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +21,7 @@ const SignUpPage = () => {
   const [signUpError, setSignUpError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const register = useAuthStore((state) => state.register);
 
   // Validation Functions
   const validateUsername = (username) => {
@@ -66,7 +69,7 @@ const SignUpPage = () => {
   };
 
   // Handle form submission
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     setSignUpError("");
     setLoading(true);
@@ -92,28 +95,23 @@ const SignUpPage = () => {
       return;
     }
 
-    // Check if the email already exists in localStorage
-    if (localStorage.getItem(formData.email)) {
-      setSignUpError("Email is already registered");
-      setTimeout(() => navigate("/sign-in"), 1000);
-      setLoading(false);
-      return;
-    }
-
-    // Save user data (for production, use a backend service instead)
-    localStorage.setItem(
-      formData.email,
-      JSON.stringify({
-        username: formData.username,
+    try {
+      // Register user using auth store
+      await register({
+        name: formData.username,
         email: formData.email,
         password: formData.password,
-      })
-    );
+        role: "user",
+      });
 
-    setTimeout(() => {
+      toast.success("Account created successfully!");
+      navigate("/");
+    } catch (error) {
+      setSignUpError(error.message);
+      toast.error(error.message);
+    } finally {
       setLoading(false);
-      navigate("/sign-in");
-    }, 500);
+    }
   };
 
   return (

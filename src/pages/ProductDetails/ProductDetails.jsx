@@ -1,27 +1,40 @@
-// Old Product Details Component
-export const OldProductDetails = () => {
-  return (
-    <div className="text-center text-gray-500">
-      Old Product Details Component
-    </div>
-  );
-};
-
 // Updated Product Details Component
+import React from "react";
 import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { HiShoppingCart } from "react-icons/hi";
 import { FaTractor, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { PRODUCTS } from "@/constants/marketplace/ViewAllProducts.constance";
+import useCartStore from "@/store/cartStore";
+import { toast } from "react-hot-toast";
+
+const formatPrice = (price) => {
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+  }).format(price);
+};
 
 const ProductDetails = () => {
   const { id } = useParams();
   const product = PRODUCTS.find((item) => item.id === parseInt(id));
+  const addItem = useCartStore((state) => state.addItem);
 
   if (!product) {
     return <div className="text-center text-red-500">Product not found!</div>;
   }
+
+  const handleAddToCart = () => {
+    try {
+      console.log("Adding product to cart:", product); // Debug log
+      addItem(product);
+      toast.success("Added to cart!");
+    } catch (error) {
+      console.error("Error adding to cart:", error); // Debug log
+      toast.error("Failed to add to cart");
+    }
+  };
 
   return (
     <div className="max-w-screen-lg mx-auto px-4 py-8">
@@ -40,8 +53,8 @@ const ProductDetails = () => {
             {product.type === "vehicle" ||
             product.type === "machine" ||
             product.type === "tool"
-              ? `$${product.price}/hour`
-              : `$${product.price}`}
+              ? `${formatPrice(product.price)}/hour`
+              : formatPrice(product.price)}
           </p>
 
           {/* Stock Availability */}
@@ -61,7 +74,11 @@ const ProductDetails = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex space-x-4">
-            <Button className={"bg-green-600"}>
+            <Button
+              className={"bg-green-600"}
+              onClick={handleAddToCart}
+              disabled={product.stock === 0}
+            >
               {product.type === "vehicle" ||
               product.type === "machine" ||
               product.type === "tool" ? (
@@ -73,7 +90,7 @@ const ProductDetails = () => {
               product.type === "machine" ||
               product.type === "tool"
                 ? "Book Now"
-                : "Buy Now"}
+                : "Add to Cart"}
             </Button>
 
             <Link to="/marketplace/view-all-products">
@@ -85,7 +102,7 @@ const ProductDetails = () => {
           <div className="mt-6">
             <h3 className="text-lg font-semibold">Customer Reviews</h3>
           </div>
-          <div className="mt-2 space-y-4 ">
+          <div className="mt-2 space-y-4">
             {product.comments.map((review, index) => (
               <div key={index} className="border p-4 rounded-lg">
                 <div className="flex items-center">

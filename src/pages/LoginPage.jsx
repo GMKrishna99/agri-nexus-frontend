@@ -6,6 +6,8 @@ import { MdErrorOutline } from "react-icons/md";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Logo from "../assets/logo.png";
+import useAuthStore from "@/store/authStore";
+import { toast } from "react-hot-toast";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +15,9 @@ const LoginPage = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [loginError, setLoginError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const login = useAuthStore((state) => state.login);
 
   // Validate Email
   const validateEmail = (email) => {
@@ -29,29 +33,33 @@ const LoginPage = () => {
     return "";
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setLoginError("");
+    setLoading(true);
 
+    // Validate all fields before proceeding
     const emailErr = validateEmail(email);
     const passwordErr = validatePassword(password);
 
     setEmailError(emailErr);
     setPasswordError(passwordErr);
 
-    if (emailErr || passwordErr) return;
+    if (emailErr || passwordErr) {
+      setLoading(false);
+      return;
+    }
 
-    // Retrieve stored user data from localStorage
-    const storedUser = JSON.parse(localStorage.getItem(email));
-
-    if (storedUser && storedUser.password === password) {
-      const lastVisitedPage = localStorage.getItem("lastVisitedPage") || "/";
-      localStorage.removeItem("lastVisitedPage"); // Remove last visited page after retrieving
-      setTimeout(() => {
-        navigate(lastVisitedPage);
-      }, 500);
-    } else {
-      setLoginError("Invalid email or password");
+    try {
+      // Login user using auth store
+      await login(email, password);
+      toast.success("Logged in successfully!");
+      navigate("/");
+    } catch (error) {
+      setLoginError(error.message);
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -106,11 +114,13 @@ const LoginPage = () => {
             )}
           </div>
 
+          {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition"
+            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition disabled:bg-gray-400"
+            disabled={loading}
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 

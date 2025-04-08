@@ -7,11 +7,13 @@ import { FaTractor, FaStar } from "react-icons/fa";
 import { PRODUCTS } from "@/constants/marketplace/ViewAllProducts.constance";
 import Banner from "@/components/Banner";
 import ProductBanner from "@/assets/farm-equipment-market.webp";
+import useCartStore from "@/store/cartStore";
+import { toast } from "react-hot-toast";
 
 const ProductList = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [cart, setCart] = useState([]);
   const navigate = useNavigate();
+  const { addItem, setIsCartOpen } = useCartStore();
 
   const filteredProducts =
     selectedCategory === "all"
@@ -19,17 +21,14 @@ const ProductList = () => {
       : PRODUCTS.filter((item) => item.type === selectedCategory);
 
   const handleAddToCart = (product) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
-      return existingItem
-        ? prevCart.map((item) =>
-            item.id === product.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          )
-        : [...prevCart, { ...product, quantity: 1 }];
-    });
-    navigate("/cart");
+    try {
+      addItem(product);
+      setIsCartOpen(true);
+      toast.success("Added to cart!");
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      toast.error("Failed to add to cart");
+    }
   };
 
   return (
