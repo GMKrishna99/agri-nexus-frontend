@@ -54,6 +54,7 @@ import SeedCropProductDetails from "@/pages/ProductDetails/SeedCropProductDetail
 import FertilizerProduct from "@/pages/ProductDetails/FertilizerProductDetail";
 import EquipmentDetails from "@/pages/ProductDetails/EquipmentDetails";
 import OrganicProductDetail from "@/pages/ProductDetails/OrganicProductDetail";
+import SchemeDetail from "@/pages/ProductDetails/GovtAssistance/SchemeDetail";
 
 const AppRoutes = () => {
   return (
@@ -205,6 +206,10 @@ const AppRoutes = () => {
                 <Route
                   path="/organic-products/:id"
                   element={<OrganicProductDetail />}
+                />
+                <Route
+                  path="/government-schemes/:id"
+                  element={<SchemeDetail />}
                 />
               </Routes>
               <Footer />
