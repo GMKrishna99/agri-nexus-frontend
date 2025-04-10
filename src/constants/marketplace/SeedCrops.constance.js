@@ -42,8 +42,8 @@ export const CATEGORIES = [
 export const FEATURED_PRODUCTS = [
   {
     id: 1,
-    name: "Wheat Seeds",
-    price: "₹2,079", // Approx. $25.99 → ₹2,079
+    name: "Organic Wheat Seeds",
+    price: "₹1,080", // Approx. $25.99 → ₹2,079
     image: Wheetseeds,
     season: "Winter",
     waterConsumption: "4000 liters/day/hectare",
