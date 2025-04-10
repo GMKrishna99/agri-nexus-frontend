@@ -45,7 +45,7 @@ const FarmingEquipment = () => {
                 variant={
                   selectedCategory === category.id ? "default" : "outline"
                 }
-                className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
+                className={`rounded-full px-6 py-2 text-sm font-medium transition-all cursor-pointer ${
                   selectedCategory === category.id
                     ? "bg-green-600 hover:bg-green-700"
                     : "hover:bg-green-50 hover:text-green-700 border-green-600 text-green-600"
@@ -59,11 +59,11 @@ const FarmingEquipment = () => {
         </div>
 
         {/* Equipment Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredEquipments.map((item) => (
             <Card
               key={item.id}
-              className="hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden flex justify-between"
+              className="hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden flex justify-between cursor-pointer"
             >
               <CardHeader className="p-0 relative">
                 <img
@@ -110,7 +110,7 @@ const FarmingEquipment = () => {
               <CardFooter className="p-4 pt-0">
                 <Link to={`/equipment-details/${item.id}`} className="w-full">
                   <Button
-                    className="w-full bg-green-600 hover:bg-green-700"
+                    className="w-full bg-green-600 hover:bg-green-700 cursor-pointer"
                     disabled={!item.availability}
                   >
                     {item.availability
