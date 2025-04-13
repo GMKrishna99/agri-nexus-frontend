@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 
 // Import all page components
 import ViewAllProducts from "../pages/Marketplace/ViewAllProducts";
-import VendorOptions from "../pages/Marketplace/VendorOptions";
 import SeedCrops from "../pages/Marketplace/SeedCrops";
 import SearchFilters from "../pages/Marketplace/SearchFilters";
 import OrganicSustainableFarming from "../pages/Marketplace/OrganicSustainableFarming";
